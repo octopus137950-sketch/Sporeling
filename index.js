@@ -3,6 +3,9 @@ const {
   GatewayIntentBits
 } = require("discord.js");
 
+console.log("TOKEN EXISTS:", !!process.env.TOKEN);
+console.log("TOKEN LENGTH:", process.env.TOKEN?.length);
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -13,14 +16,6 @@ const client = new Client({
 
 client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
-});
-
-client.on("messageCreate", message => {
-  if (message.author.bot) return;
-
-  if (message.content === "!เห็ด") {
-    message.reply("🍄 อาณาจักรเห็ดขอต้อนรับ!");
-  }
 });
 
 client.login(process.env.TOKEN);
