@@ -1,0 +1,15 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "A basic Discord bot in JavaScript (Node.js) using discord.js v14.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "dotenv": "^14.2.0",
+    "discord.js": "^14.8.1"
+  }
+}
