@@ -1,14 +1,11 @@
 {
-  "name": "mushroom-kingdom-bot",
+  "name": "mycelius-bot",
   "version": "1.0.0",
-  "description": "บอทดูแลอาณาจักรเห็ด",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^14.14.1",
-    "@discordjs/rest": "^2.2.0",
-    "discord-api-types": "^0.37.67"
+    "discord.js": "^14.21.0"
   }
 }
