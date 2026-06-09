@@ -1,28 +1,17 @@
-require('dotenv').config(); // เพื่อใช้ Environment Variable
-
 const { Client, GatewayIntentBits } = require('discord.js');
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 8080;
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages
-  ]
+client.once('ready', () => {
+    console.log(`🍄 ${client.user.tag} ตื่นจากการจำศีลในป่าเห็ดแล้ว!`);
 });
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  app.listen(port, () => {
-    console.log(`Web server is running on http://localhost:${port}`);
-  });
+client.on('messageCreate', message => {
+    if (message.author.bot) return;
+
+    if (message.content === '!hello') {
+        message.reply('ยินดีต้อนรับสู่อาณาจักรเห็ดต่างโลก! มีอะไรให้ข้านับใช้ไหมเจ้าคะ/ครับ? 🍄✨');
+    }
 });
 
-client.on('messageCreate', async message => {
-  if (message.content.startsWith('!ping')) {
-    message.reply('Pong!');
-  }
-});
-
-client.login(process.env.DISCORD_TOKEN);
+// นำ Token จากขั้นตอนที่ 1 มาใส่ที่นี่
+client.login('ใส่_TOKEN_ของบอทตรงนี้');
