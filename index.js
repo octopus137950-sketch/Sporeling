@@ -155,4 +155,4 @@ client.on('guildMemberRemove', async member => {
 });
 
 // วาง Token ของคุณตรงนี้
-client.login('ใส่_TOKEN_ของบอทตรงนี้');
+client.login('MTUxMzg0NzEyNjI2MDQ1MzU1Nw.G5itV0.h1eg5AZZNnnsxw0ut2mMXPErL1sAsXG12VdkV8');
